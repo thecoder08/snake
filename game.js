@@ -4,7 +4,7 @@ var snake = [{x:0,y:0},{x:1,y:0},{x:2,y:0},{x:3,y:0}];
 
 var dir = {x:0,y:1};
 
-var apple = {x: Math.round(Math.random() * 50), y: Math.round(Math.random() * 50)};
+var apple = {x: Math.round(Math.random() * 49), y: Math.round(Math.random() * 49)};
 
 function drawSnake() {
     ctx.fillStyle = 'green';
@@ -39,7 +39,7 @@ var interval = setInterval(function() {
     moveSnake();
     if ((snake[0].x == apple.x) && (snake[0].y == apple.y)) {
         snake.push({x: snake[snake.length - 1].x - dir.x, y: snake[snake.length - 1].y - dir.y});
-        apple = {x: Math.round(Math.random() * 50), y: Math.round(Math.random() * 50)};
+        apple = {x: Math.round(Math.random() * 49), y: Math.round(Math.random() * 49)};
     }
     if (snake.filter(v => ((v.x == snake[0].x) && (v.y == snake[0].y))).length > 1) {
         clearInterval(interval);
